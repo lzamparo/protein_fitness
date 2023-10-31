@@ -17,15 +17,15 @@
 `Fitness`: The score we are trying to predict (and maximize). The minimum is zero and 1 is for natural protein.
 
 ## Ideas
-
-This is a discrete optimization problem; predict the fitness is a function of a sequence of discrete sequences that is to be optimized.  The input domain isn't a vector space, and there's no reason to think the function from sequence to fitness is smooth.  I see three ways to proceed. 
+This is a discrete optimization problem; the fitness is a function of a discrete sequence that is to be optimized.  The input domain isn't a vector space, and there's no reason to think the function from sequence to fitness is smooth.  I see three ways to proceed. 
 
 1. Read the paper, see if any ideas emerge that'll allow me to featurize the aminos.  That could open up a simple graph proposal, with mutations on the graph for searching.
    - Possible easy model: positional one hot encoding of aminos in each position -> fit regularized LR -> SHAP to look for positional effects -> suggestions for next sequencing
   
 2. Try out a model that predicts the function based on sequence as some form of linear regression, where each sequence position can be coded as a choice.  A bandit optimization approach might be better here, but I don't know the literature.  
-    - There's a Pyro model that sets up a Bayesian linear regression [cf. https://github.com/pyro-ppl/pyroed]
+    - There's a Pyro model that sets up a [Bayesian linear regression](https://github.com/pyro-ppl/pyroed).
   
 3. Try out a fancier model for discrete optimization. 
     - Michael Osborne and collaborators have a good paper out of ICLR last year that could work
     - [paper](https://openreview.net/forum?id=WV1ZXTH0OIn), [code](https://github.com/facebookresearch/bo_pr)
+
