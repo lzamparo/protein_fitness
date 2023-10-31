@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "peptide-fitness"
+version = "0.1.0"
+description = ""
+authors = ["Lee Zamparo <zamparo@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.1.1"
+matplotlib = "^3.8.0"
+pyro-ppl = "^1.7"
+scipy = "^1.11.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
