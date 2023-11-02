@@ -98,3 +98,5 @@ odds_ratios = np.divide(model_position_freq_df.to_numpy(), data_position_freq_df
 odds_df = pd.DataFrame(odds_ratios, index=model_position_freq_df.index, columns=model_position_freq_df.columns)
 odds_hm = sns.heatmap(odds_df, annot=True, cmap="crest", linewidth=0.5, fmt=".3f")
 odds_hm.get_figure().savefig(os.path.join("output", "images", "odds_heatmap.png"))
+
+# %%

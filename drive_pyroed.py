@@ -36,7 +36,7 @@ def run(reps: int, mode: str="svi") -> None:
 
         # fit model & sample top 10 predictions likely to improve scores
         design = pe.get_next_design(
-            SCHEMA, CONSTRAINTS, FEATURE_BLOCKS, GIBBS_BLOCKS, experiment, design_size=10, config={"response_type": "real", "inference": mode}
+            SCHEMA, CONSTRAINTS, FEATURE_BLOCKS, GIBBS_BLOCKS, experiment, design_size=10, config={"response_type": "real", "inference": mode, "mcmc_num_samples": 1000}
         )
         # write top 10 predicted outputs
         new_seqences = ["".join(s) for s in pe.decode_design(SCHEMA, design)]

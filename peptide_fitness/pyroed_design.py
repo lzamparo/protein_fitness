@@ -2,7 +2,6 @@ from collections import OrderedDict
 
 # Declare the set of choices and the values each choice can take.
 aminos_list = ["A", "C", "D", "E", "F", "G", "H", "I", "K", "M", "N", "O" "P", "Q", "R", "S", "T", "U", "V", "W", "Y"]
-aminos_list = ["A", "R", "N", "D", "B", "C", "E", "Q", "Z", "G", "H", "I", "L", "K", "M", "F", "P", "S", "T", "W", "Y", "V"]
 SCHEMA = OrderedDict([(f"amino{i}", aminos_list) for i in range(4)])
 
 # Declare some constraints. See pyroed.constraints for options.
